@@ -1,0 +1,30 @@
+@use "function" as *;
+@use "variable" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+  a  {
+    padding: 8px 0;
+    color: $colorTextDark;
+    &:hover {
+      color: $colorTextAccent;
+    }
+  }
+  &-logo {
+
+    > img {
+      height: 24px;
+      width: auto;
+    }
+  }
+  &-nav {
+    display: flex;
+    gap: 80px;
+  }
+  &-contacts {
+    display: flex;
+    gap: 32px;
+  }
+}

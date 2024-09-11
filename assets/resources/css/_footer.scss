@@ -1,0 +1,79 @@
+@use "function" as *;
+@use "variable" as *;
+
+.footer {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  background-color: $colorBackgroundDark;
+  color: $colorTextLight;
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 100px;
+  }
+
+  a {
+    color: $colorTextLight;
+
+    &:hover {
+      color: $colorTextAccent;
+    }
+  }
+
+    &-about {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      &-logo {
+
+      }
+
+      &-text {
+
+      }
+    }
+
+    &-link {
+      cursor: pointer;
+      margin: auto;
+      &:hover {
+        color: $colorTextAccent;
+      }
+    }
+
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      margin: auto 0;
+
+      > a {
+        padding: 8px 0;
+      }
+    }
+
+
+  &-contacts {
+    width: 224px;
+    margin-left: auto;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    //gap: 24px;
+    justify-content: space-between;
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      > a {
+        padding: 4px 0;
+      }
+    }
+
+    &-address {
+
+    }
+  }
+}

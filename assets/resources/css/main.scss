@@ -1,0 +1,83 @@
+@use "function" as *;
+@use "variable" as *;
+
+@import "header";
+@import "footer";
+@import "h";
+@import "mainPage";
+
+* {
+  box-sizing: border-box;
+  font-family: "Intro", sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+header {
+  flex: none;
+}
+
+main {
+  flex: auto;
+  background-color: $colorBackground;
+}
+
+footer {
+  flex: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.container {
+  @mixin Container($params: null) {
+    padding-left: GetParam($params, padding_container, 14%);
+    padding-right: GetParam($params, padding_container, 14%);
+  }
+  @include MixScreen(null, $size2XL) { @include Container((padding_container: 4%)); }
+  @include MixScreen($size2XL) { @include Container(()); }
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  text-align: center;
+  background-color: $colorBtnAccent;
+  color: $colorTextLight;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.logo {
+  @mixin Logo($params: null) {
+    > img {
+      width: GetParam($params, logo_width, 244px);
+    }
+  }
+  @include MixScreen(null, $size5XL) { @include Logo((logo_width: 160px)); }
+  @include MixScreen($size5XL) { @include Logo(()); }
+}
+
+input, textarea {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.hide {
+  display: none;
+}
